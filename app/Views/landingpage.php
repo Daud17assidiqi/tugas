@@ -75,9 +75,13 @@
         <a href="<?= base_url(); ?>/Chat" class="btn"> Konsultasi Sekarang <span class="fas fa-chevron-right"></span> </a>
       <?php } else { ?>
         <a href="<?= base_url(); ?>/Chat" onclick="return confirm('Anda harus login terlebih dahulu')" class="btn"> Konsultasi Sekarang <span class="fas fa-chevron-right"></span> </a>
-      <?php } ?>
-      <a href="<?= base_url() ?>/daftar/dpoli" class="btn"> Daftar <span class="fas fa-chevron-right"></span> </a>
-    </div>
+        <?php } ?>
+        <?php if (session()->get('log_in') == true) { ?>
+        <a href="<?= base_url() ?>/daftar/dpoli" class="btn"> Daftar <span class="fas fa-chevron-right"></span> </a>
+        <?php } else { ?>
+          <a href="<?= base_url(); ?>/daftar/dpoli" onclick="return confirm('Anda harus login terlebih dahulu')" class="btn">Daftar<span class="fas fa-chevron-right"></span> </a>
+          <?php } ?>
+        </div>
   </section>
 
     <!-- endJumbotron -->
